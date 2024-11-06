@@ -4,10 +4,13 @@
     "resolveJsonModule" : true,
     "paths": {
       "@instruments/common/*": ["./instruments/src/Common/*"],
+      "@typings/*": ["../../../fbw-common/src/typings/*"],
+      "@shared/*": ["../../../shared/src/*"],
+      "@simbridge/*": ["../../../fbw-a32nx/src/systems/simbridge-client/src/*"],
       "@flybywiresim/fbw-sdk": ["../../../fbw-common/src/systems/index.ts"],
       "@flybywiresim/flypad": ["../../../fbw-common/src/systems/instruments/src/EFB/index.ts"],
       "@flybywiresim/checklists": ["../../../fbw-common/src/systems/shared/src/checklists/index.ts"],
-      "@shared/*": ["../../../shared/src/*"],
+
     }
   }
 }
