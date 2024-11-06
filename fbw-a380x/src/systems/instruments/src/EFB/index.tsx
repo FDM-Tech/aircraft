@@ -22,8 +22,8 @@ render(
   <AircraftContext.Provider
     value={{
       performanceCalculators: {
-        takeoff: null,
-        landing: null,
+        takeoff: new A380482xTakeoffPerformanceCalculator(),
+        landing: new A380482xLandingCalculator(),
       },
       pushbackPage: {
         turnIndicatorTuningDefault: 1.35,
