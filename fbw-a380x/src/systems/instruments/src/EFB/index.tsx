@@ -5,6 +5,8 @@ import React from 'react';
 import { render } from '@instruments/common/index';
 import { AircraftContext, EfbWrapper, syncSettingsFromPersistentStorage } from '@flybywiresim/flypad';
 import { A380FailureDefinitions } from '../../../failures';
+import { A380482xLandingCalculator } from '@shared/performance/a38x_landing';
+import { A380482xTakeoffPerformanceCalculator } from '@shared/performance/a38x_takeoff';
 import { AutomaticCallOutsPage } from './Pages/AutomaticCallOutsPage';
 import { a380xSyncedSettings } from 'instruments/src/EFB/settingsSync';
 
