@@ -29,9 +29,9 @@ import {
 } from '@flybywiresim/fbw-sdk';
 
 /**
- * Takeoff performance calculator for an A320-251N with forward CG
+ * Takeoff performance calculator for an A380-482x with forward CG
  */
-export class A320251NTakeoffPerformanceCalculator implements TakeoffPerformanceCalculator {
+export class A380482xTakeoffPerformanceCalculator implements TakeoffPerformanceCalculator {
   private static readonly vec2Cache = Vec2Math.create();
   private static readonly vec3Cache = Vec3Math.create();
   private static readonly vec4Cache = VecNMath.create(4);
