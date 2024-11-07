@@ -43,11 +43,11 @@ export class A380482xTakeoffPerformanceCalculator implements TakeoffPerformanceC
   /** Max flex temp as a delta from ISA in °C. */
   private static readonly tMaxFlexDisa = 59;
 
-  public readonly structuralMtow = 79_000;
+  public readonly structuralMtow = 512_000;
 
   public readonly maxPressureAlt = 9_200;
 
-  public readonly oew = 42_500;
+  public readonly oew = 270_000;
 
   public readonly maxHeadwind = 45;
 
