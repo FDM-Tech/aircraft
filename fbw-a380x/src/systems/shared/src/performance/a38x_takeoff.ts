@@ -301,16 +301,16 @@ export class A380482xTakeoffPerformanceCalculator implements TakeoffPerformanceC
 
   /** Takeoff CG envelope. key = TOW [kg] => [lower limit, upper limit] %MAC. */
   private static readonly takeoffCgLimits = new LerpVectorLookupTable([
-    [Vec2Math.create(15, 32.5), 40_500],
-    [Vec2Math.create(15, 37), 50_000],
-    [Vec2Math.create(15, MathUtils.lerp(53_000, 50_000, 67_200, 37, 40)), 53_000],
-    [Vec2Math.create(17, MathUtils.lerp(63_000, 50_000, 67_200, 37, 40)), 63_000],
-    [Vec2Math.create(17, 40), 67_200],
-    [Vec2Math.create(17, 40), 72_000],
-    [Vec2Math.create(MathUtils.lerp(73_200, 72_000, 77_000, 17, 24), 40), 73_200],
-    [Vec2Math.create(24, 37.2), 77_000],
+    [Vec2Math.create(15, 32.5), 262_656],
+    [Vec2Math.create(15, 37), 324_096],
+    [Vec2Math.create(15, MathUtils.lerp(407_525, 324_096, 434_176, 37, 40)), 343_040],
+    [Vec2Math.create(17, MathUtils.lerp(409_446, 324_096, 434_176, 37, 40)), 408_000],
+    [Vec2Math.create(17, 40), 432_128],
+    [Vec2Math.create(17, 40), 465_92],
+    [Vec2Math.create(MathUtils.lerp(474_368, 465_920, 345_395, 17, 24), 40), 474_368],
+    [Vec2Math.create(24, 37.2), 498_995],
   ]);
-
+  
   private static readonly cgFactors: Record<number, [number, number]> = {
     1: [-0.041448, 3.357],
     2: [-0.03277, 2.686],
