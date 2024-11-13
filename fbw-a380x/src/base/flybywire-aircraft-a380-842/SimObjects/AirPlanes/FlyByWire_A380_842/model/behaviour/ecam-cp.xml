@@ -427,7 +427,7 @@
         <!-- SD VIDEO -->
         <UseTemplate Name="FBW_Anim_Interactions">
             <NODE_ID>PUSH_ECAM_VIDEO</NODE_ID>
-            <STATE_ID>15</STATE_ID>
+            <STATE_ID>16</STATE_ID>
 
             <ANIM_TYPE>BUTTON</ANIM_TYPE>
             <ANIM_TEMPLATE>FBW_A380X_ECAM_CP_Button_Template</ANIM_TEMPLATE>

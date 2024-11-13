@@ -1,11 +1,17 @@
 import React from 'react';
 import { PageTitle } from '../Generic/PageTitle';
-import MapViewAircraft from './elements/MapViewWasmModule.wasm';
+import MapViewWasmModule from './MapViewWasmModule.wasm';
+
 import '../../../index.scss';
 
-export const VideoPage = () => (
+export const VideoPage = () => {
+  //const MapViewAircraft = MapViewAircraft();
+
   <PageTitle x={6} y={29}>
     VIDEO
-  </PageTitle>
-  <MapViewAircraft> </MapViewAircraft>
-);
+  </PageTitle>;
+
+  {
+    MapViewWasmModule.wasm_gauge('MapView2D');
+  }
+};
