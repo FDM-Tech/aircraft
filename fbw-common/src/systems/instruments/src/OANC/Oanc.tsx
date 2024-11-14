@@ -1099,7 +1099,7 @@ export class Oanc<T extends number> extends DisplayComponent<OancProps<T>> {
   private updatePosition(): void {
     this.ppos.lat = SimVar.GetSimVarValue('PLANE LATITUDE', 'Degrees');
     this.ppos.long = SimVar.GetSimVarValue('PLANE LONGITUDE', 'Degrees');
-    this.planeTrueHeading.set(SimVar.GetSimVarValue('PLANE HEADING DEGREES TRUE', 'Degrees'));
+    this.planeTrueHeading.set(SimVar.GetSimVarValue('PLANE HEADING DEGREES MAGNETIC', 'Degrees'));
 
     if (this.arpCoordinates) {
       this.projectCoordinates(this.ppos, this.projectedPpos);
