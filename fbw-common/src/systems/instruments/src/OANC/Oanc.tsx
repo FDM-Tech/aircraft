@@ -284,7 +284,7 @@ export class Oanc<T extends number> extends DisplayComponent<OancProps<T>> {
 
   private readonly aircraftOnGround = Subject.create(true);
 
-  private readonly planeTrueHeading = Subject.create(0);
+  private readonly planeMagneticHeading = Subject.create(0);
 
   private readonly mapHeading = Subject.create(0);
 
@@ -971,7 +971,7 @@ export class Oanc<T extends number> extends DisplayComponent<OancProps<T>> {
     this.btvUtils.updateRwyAheadAdvisory(
       this.ppos,
       this.arpCoordinates,
-      this.planeTrueHeading.get(),
+      this.planeMagneticHeading.get(),
       this.layerFeatures[2],
     );
 
@@ -980,7 +980,7 @@ export class Oanc<T extends number> extends DisplayComponent<OancProps<T>> {
       return;
     }
 
-    const mapTargetHeading = this.modeAnimationMapNorthUp.get() ? 0 : this.planeTrueHeading.get();
+    const mapTargetHeading = this.modeAnimationMapNorthUp.get() ? 0 : this.planeMagneticHeading.get();
     this.mapHeading.set(mapTargetHeading);
 
     const interpolatedMapHeading = this.interpolatedMapHeading.get();
@@ -1047,7 +1047,7 @@ export class Oanc<T extends number> extends DisplayComponent<OancProps<T>> {
     // Transform airplane
     this.aircraftX.set(384);
     this.aircraftY.set(384);
-    this.aircraftRotation.set(this.planeTrueHeading.get() - mapCurrentHeading);
+    this.aircraftRotation.set(this.planeMagneticHeading.get() - mapCurrentHeading);
 
     // FIXME Use this to update pan offset when zooming
     /* if (this.previousZoomLevelIndex.get() !== this.zoomLevelIndex.get()) {
@@ -1099,7 +1099,7 @@ export class Oanc<T extends number> extends DisplayComponent<OancProps<T>> {
   private updatePosition(): void {
     this.ppos.lat = SimVar.GetSimVarValue('PLANE LATITUDE', 'Degrees');
     this.ppos.long = SimVar.GetSimVarValue('PLANE LONGITUDE', 'Degrees');
-    this.planeTrueHeading.set(SimVar.GetSimVarValue('PLANE HEADING DEGREES MAGNETIC', 'Degrees'));
+    this.planeMagneticHeading.set(SimVar.GetSimVarValue('PLANE HEADING DEGREES MAGNETIC', 'Degrees'));
 
     if (this.arpCoordinates) {
       this.projectCoordinates(this.ppos, this.projectedPpos);
